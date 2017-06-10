@@ -1,2 +1,2 @@
 # E-commerce sample
-It's a sample of a e-commerce.
+It's a sample of an e-commerce.
