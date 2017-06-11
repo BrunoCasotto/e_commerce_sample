@@ -23,5 +23,14 @@ module.exports = [
         path: 'js/'
       }
     }
+  },
+  {
+    method: 'GET',
+    path: '/img/{filename*}',
+    handler: {
+      directory: {
+        path: 'image/'
+      }
+    }
   }
 ]
