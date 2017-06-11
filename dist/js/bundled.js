@@ -300,8 +300,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 window.$ = window.jQuery = __webpack_require__(7);
 
-// ==== modules important ========
-
 
 new _vue2.default({
   el: '#app'
