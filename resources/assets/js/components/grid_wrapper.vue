@@ -37,6 +37,8 @@
   }
 </script>
 <style lang="sass" scoped>
+  @import "~_sass/_vars.scss";
+
   .grid-wrapper {
     padding: 10px;
 
@@ -44,6 +46,8 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      max-width: $screen-sm;
+      margin: 0 auto;
     }
   }
 </style>

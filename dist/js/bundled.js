@@ -2014,6 +2014,14 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   props: {
@@ -2033,6 +2041,17 @@ exports.default = {
         "isFreeShipping": true
       }
     }
+  },
+  methods: {
+    filterPrice: function filterPrice(value) {
+      return parseFloat(value).toFixed(2);
+    },
+    getInt: function getInt(value) {
+      return Math.floor(this.filterPrice(value));
+    },
+    getDecimal: function getDecimal(value) {
+      return (this.filterPrice(value) % 1).toFixed(2).substring(2);
+    }
   }
 };
 
@@ -2045,7 +2064,7 @@ exports = module.exports = __webpack_require__(2)();
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);", ""]);
 
 // module
-exports.push([module.i, "/*\n=======================\n    CUSTOM\n=======================\n*/\n[v-cloak] {\n  display: none; }\n\n*,\n*:before,\n*:after {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box; }\n\nhtml {\n  font-size: 14px;\n  font-weight: 400;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  text-rendering: optimizeLegibility !important;\n  -webkit-font-smoothing: antialiased !important;\n  font-family: sans-serif; }\n  html img {\n    max-width: 100%; }\n  html a {\n    text-decoration: none; }\n    html a:hover {\n      text-decoration: none; }\n", ""]);
+exports.push([module.i, "/*\n=======================\n    CUSTOM\n=======================\n*/\n[v-cloak] {\n  display: none; }\n\n*,\n*:before,\n*:after {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box; }\n\nhtml {\n  font-size: 14px;\n  font-weight: 400;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  text-rendering: optimizeLegibility !important;\n  -webkit-font-smoothing: antialiased !important;\n  font-family: \"Open Sans\"; }\n  html img {\n    max-width: 100%; }\n  html a {\n    text-decoration: none; }\n    html a:hover {\n      text-decoration: none; }\n", ""]);
 
 // exports
 
@@ -2059,7 +2078,7 @@ exports = module.exports = __webpack_require__(2)();
 
 
 // module
-exports.push([module.i, "\n.product[data-v-0d18b563] {\n  padding: 10px;\n}\n", "", {"version":3,"sources":["/./resources/assets/js/components/product.vue"],"names":[],"mappings":";AAAA;EACE,cAAc;CAAE","file":"product.vue","sourcesContent":[".product {\n  padding: 10px; }\n"],"sourceRoot":"webpack://"}]);
+exports.push([module.i, "\n.product[data-v-0d18b563] {\n  padding: 5px;\n  margin: 20px;\n  width: 200px;\n  cursor: pointer;\n  transition: .5s all ease;\n}\n.product[data-v-0d18b563]:hover {\n    box-shadow: 3px 0px 11px -2px #bdbdbd;\n}\n.product:hover .product__details__price[data-v-0d18b563]:before {\n      background-color: #eb0010;\n}\n.product__image[data-v-0d18b563] {\n    padding: 10px;\n    max-width: 180px;\n    margin: 0 auto;\n}\n.product__image img[data-v-0d18b563] {\n      width: 100%;\n}\n.product__details__title[data-v-0d18b563] {\n    text-align: center;\n    min-height: 40px;\n    line-height: 20px;\n}\n.product__details__price[data-v-0d18b563] {\n    text-align: center;\n}\n.product__details__price[data-v-0d18b563]:before {\n      content: '';\n      width: 15px;\n      height: 2px;\n      background: #dfbd00;\n      display: block;\n      margin: 5px auto;\n      margin-bottom: 0;\n      transition: .5s all ease;\n}\n.product__details__price .price__value[data-v-0d18b563] {\n      font-weight: bold;\n      font-size: 1.71rem;\n}\n.product__details__price .price__value--decimal[data-v-0d18b563] {\n        font-size: 0.85rem;\n        font-weight: normal;\n}\n", "", {"version":3,"sources":["/./resources/assets/js/components/product.vue"],"names":[],"mappings":";AAAA;EACE,aAAa;EACb,aAAa;EACb,aAAa;EACb,gBAAgB;EAChB,yBAAyB;CAAE;AAC3B;IACE,sCAAsC;CAAE;AACxC;MACE,0BAA0B;CAAE;AAChC;IACE,cAAc;IACd,iBAAiB;IACjB,eAAe;CAAE;AACjB;MACE,YAAY;CAAE;AAClB;IACE,mBAAmB;IACnB,iBAAiB;IACjB,kBAAkB;CAAE;AACtB;IACE,mBAAmB;CAAE;AACrB;MACE,YAAY;MACZ,YAAY;MACZ,YAAY;MACZ,oBAAoB;MACpB,eAAe;MACf,iBAAiB;MACjB,iBAAiB;MACjB,yBAAyB;CAAE;AAC7B;MACE,kBAAkB;MAClB,mBAAmB;CAAE;AACrB;QACE,mBAAmB;QACnB,oBAAoB;CAAE","file":"product.vue","sourcesContent":[".product {\n  padding: 5px;\n  margin: 20px;\n  width: 200px;\n  cursor: pointer;\n  transition: .5s all ease; }\n  .product:hover {\n    box-shadow: 3px 0px 11px -2px #bdbdbd; }\n    .product:hover .product__details__price:before {\n      background-color: #eb0010; }\n  .product__image {\n    padding: 10px;\n    max-width: 180px;\n    margin: 0 auto; }\n    .product__image img {\n      width: 100%; }\n  .product__details__title {\n    text-align: center;\n    min-height: 40px;\n    line-height: 20px; }\n  .product__details__price {\n    text-align: center; }\n    .product__details__price:before {\n      content: '';\n      width: 15px;\n      height: 2px;\n      background: #dfbd00;\n      display: block;\n      margin: 5px auto;\n      margin-bottom: 0;\n      transition: .5s all ease; }\n    .product__details__price .price__value {\n      font-weight: bold;\n      font-size: 1.71rem; }\n      .product__details__price .price__value--decimal {\n        font-size: 0.85rem;\n        font-weight: normal; }\n"],"sourceRoot":"webpack://"}]);
 
 // exports
 
@@ -2073,7 +2092,7 @@ exports = module.exports = __webpack_require__(2)();
 
 
 // module
-exports.push([module.i, "\n.grid-wrapper[data-v-5226cb54] {\n  padding: 10px;\n}\n.grid-wrapper__content[data-v-5226cb54] {\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    -ms-flex-pack: center;\n        justify-content: center;\n}\n", "", {"version":3,"sources":["/./resources/assets/js/components/grid_wrapper.vue"],"names":[],"mappings":";AAAA;EACE,cAAc;CAAE;AAChB;IACE,qBAAc;IAAd,cAAc;IACd,oBAAgB;QAAhB,gBAAgB;IAChB,sBAAwB;QAAxB,wBAAwB;CAAE","file":"grid_wrapper.vue","sourcesContent":[".grid-wrapper {\n  padding: 10px; }\n  .grid-wrapper__content {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center; }\n"],"sourceRoot":"webpack://"}]);
+exports.push([module.i, "\n.grid-wrapper[data-v-5226cb54] {\n  padding: 10px;\n}\n.grid-wrapper__content[data-v-5226cb54] {\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    -ms-flex-pack: center;\n        justify-content: center;\n    max-width: 768px;\n    margin: 0 auto;\n}\n", "", {"version":3,"sources":["/./resources/assets/js/components/grid_wrapper.vue"],"names":[],"mappings":";AAAA;EACE,cAAc;CAAE;AAChB;IACE,qBAAc;IAAd,cAAc;IACd,oBAAgB;QAAhB,gBAAgB;IAChB,sBAAwB;QAAxB,wBAAwB;IACxB,iBAAiB;IACjB,eAAe;CAAE","file":"grid_wrapper.vue","sourcesContent":[".grid-wrapper {\n  padding: 10px; }\n  .grid-wrapper__content {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    max-width: 768px;\n    margin: 0 auto; }\n"],"sourceRoot":"webpack://"}]);
 
 // exports
 
@@ -13392,17 +13411,29 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "product"
-  }, [_c('div', {
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "product__details"
+  }, [_c('p', {
+    staticClass: "product__details__title"
+  }, [_vm._v(_vm._s(_vm.product.title))]), _vm._v(" "), _c('p', {
+    staticClass: "product__details__price"
+  }, [_c('span', {
+    staticClass: "price__currency"
+  }, [_vm._v(_vm._s(_vm.product.currencyFormat))]), _vm._v(" "), _c('span', {
+    staticClass: "price__value"
+  }, [_vm._v(_vm._s(_vm.getInt(_vm.product.price)) + ",")]), _vm._v(" "), _c('span', {
+    staticClass: "price__value--decimal"
+  }, [_vm._v(" " + _vm._s(_vm.getDecimal(_vm.product.price)) + " ")])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "product__image"
   }, [_c('img', {
     attrs: {
       "src": "/img/product.png"
     }
-  })])])
+  })])
 }]}
 module.exports.render._withStripped = true
 if (false) {

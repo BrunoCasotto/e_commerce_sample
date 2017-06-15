@@ -22,6 +22,7 @@ module.exports = {
     alias:{
       _components: path.join(js_path, 'components'),
       _js: path.join(js_path),
+      _sass: path.join(sass_path),
       _npm: path.join(__dirname, 'node_modules'),
       'vue$': path.join(__dirname, 'node_modules', 'vue/dist/vue.common.js')
     }
