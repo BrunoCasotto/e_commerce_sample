@@ -1,1 +1,6 @@
-@import './base.scss'
+//modules imports
+@import "~_npm/growl-alert/dist/growl-alert.css";
+
+//partials imports
+@import './template.scss';
+@import './base.scss';

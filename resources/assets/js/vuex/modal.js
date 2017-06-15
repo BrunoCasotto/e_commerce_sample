@@ -5,14 +5,14 @@ export default {
     data: {}
   },
   mutations : {
-    callModal (state, active, data) {
-      state.active = active
-      state.data = data
+    callModal (state, data) {
+      state.active = data.active
+      state.data = data.product
     }
   },
   actions : {
     callModal(context, data) {
-      context.commit('callModal', active, data)
+      context.commit('callModal', data)
     }
   }
 }

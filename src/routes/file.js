@@ -1,10 +1,13 @@
+const config = require('./config')
+
 module.exports = [
   {
     method: 'GET',
     path: '/favicon.ico',
     handler: function(request, reply) {
       reply.file( 'favico.ico', { confine: false })
-    }
+    },
+    config: config
   },
   {
     method: 'GET',
@@ -13,7 +16,8 @@ module.exports = [
       directory: {
         path: 'css/'
       }
-    }
+    },
+    config: config
   },
   {
     method: 'GET',
@@ -22,7 +26,8 @@ module.exports = [
       directory: {
         path: 'js/'
       }
-    }
+    },
+    config: config
   },
   {
     method: 'GET',
@@ -31,6 +36,7 @@ module.exports = [
       directory: {
         path: 'image/'
       }
-    }
+    },
+    config: config
   }
 ]

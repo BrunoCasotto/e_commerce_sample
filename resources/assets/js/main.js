@@ -13,5 +13,18 @@ new Vue({
   components: {
     gridWrapper,
     modal
+  },
+  computed: {
+    overlay: function () {
+      return this.$store.state.modal.active
+    }
+  },
+  methods: {
+    closeModal() {
+      this.$store.dispatch('callModal', {
+        active: false,
+        product: {}
+      })
+    }
   }
 })
