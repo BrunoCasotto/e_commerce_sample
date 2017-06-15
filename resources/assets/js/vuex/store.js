@@ -3,10 +3,12 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 import modal from'./modal'
+import cart from'./cart'
 
 const store = new Vuex.Store({
   modules: {
-    modal
+    modal,
+    cart
   }
 })
 

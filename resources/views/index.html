@@ -9,7 +9,7 @@
   <body>
     <div id="app">
       <grid-wrapper></grid-wrapper>
-      <div v-if="overlay" @click="closeModal" class="overlay"></div>
+      <div v-if="overlay || cartOverlay" @click="closeModal" class="overlay"></div>
       <modal></modal>
       <cart></cart>
     </div>

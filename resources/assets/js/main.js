@@ -19,6 +19,9 @@ new Vue({
   computed: {
     overlay: function () {
       return this.$store.state.modal.active
+    },
+    cartOverlay: function() {
+      return this.$store.state.cart.active
     }
   },
   methods: {
