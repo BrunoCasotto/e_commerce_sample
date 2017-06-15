@@ -31,6 +31,11 @@
     "url": "https://github.com/BrunoCasotto/e_commerce_sample/issues"
   },
   "homepage": "https://github.com/BrunoCasotto/e_commerce_sample#readme",
+  "devDependencies": {
+    "deepmerge": "^1.4.3",
+    "concurrently": "^2.2.0",
+    "webpack-dev-server": "^2.3.0"
+  },
   "dependencies": {
     "autoprefixer": "^6.7.3",
     "axios": "^0.12.0",
@@ -39,9 +44,7 @@
     "babel-plugin-transform-runtime": "^6.9.0",
     "babel-preset-es2015": "^6.9.0",
     "babel-runtime": "^6.9.2",
-    "concurrently": "^2.2.0",
     "css-loader": "^0.23.1",
-    "deepmerge": "^1.4.3",
     "es6-promise": "^3.2.1",
     "growl-alert": "^0.3.2",
     "hapi": "^16.0.1",
@@ -65,7 +68,6 @@
     "vue-template-compiler": "^2.1.10",
     "vuefire": "^1.1.1",
     "vuex": "^2.1.2",
-    "webpack": "2.2.1",
-    "webpack-dev-server": "^2.3.0"
+    "webpack": "2.2.1"
   }
 }
