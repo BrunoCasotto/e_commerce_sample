@@ -3,9 +3,9 @@ const webpack = require("webpack")
 const eslint   = require('./.eslintrc.json')
 
 //path const
-const base_path = path.resolve(__dirname, 'resources/')
-const js_path = path.resolve(__dirname, 'resources/assets/js')
-const sass_path = path.resolve(__dirname, 'resources/assets/sass')
+const base_path = path.resolve(__dirname, '..', 'resources/')
+const js_path = path.resolve(__dirname, '..', 'resources/assets/js')
+const sass_path = path.resolve(__dirname, '..', 'resources/assets/sass')
 
 module.exports = {
   entry: [
@@ -23,8 +23,8 @@ module.exports = {
       _components: path.join(js_path, 'components'),
       _js: path.join(js_path),
       _sass: path.join(sass_path),
-      _npm: path.join(__dirname, 'node_modules'),
-      'vue$': path.join(__dirname, 'node_modules', 'vue/dist/vue.common.js')
+      _npm: path.join(__dirname, '..', 'node_modules'),
+      'vue$': path.join(__dirname, '..', 'node_modules', 'vue/dist/vue.common.js')
     }
   },
   module: {
@@ -39,15 +39,6 @@ module.exports = {
               browsers: ['last 4 versions', 'IE 10']
             })
           ]
-        }
-      },
-      {
-        enforce: "pre",
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader",
-        options: {
-          emitError: true,
         }
       },
       {

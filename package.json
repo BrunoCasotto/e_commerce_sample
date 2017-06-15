@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build:prod": "webpack -p",
+    "build:prod": "webpack --config webpack/webpack.base.js -p",
     "dev": "concurrently \"npm run watch:dev\" \"npm run build:dev\"",
     "watch:dev": "nodemon index.js",
-    "build:dev": "webpack --watch",
+    "build:dev": "webpack --watch --config webpack/webpack.dev.js",
     "heroku-postbuild": "npm run build:prod"
   },
   "engines": {
@@ -41,6 +41,7 @@
     "babel-runtime": "^6.9.2",
     "concurrently": "^2.2.0",
     "css-loader": "^0.23.1",
+    "deepmerge": "^1.4.3",
     "es6-promise": "^3.2.1",
     "growl-alert": "^0.3.2",
     "hapi": "^16.0.1",
