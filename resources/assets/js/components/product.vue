@@ -119,7 +119,7 @@
       cursor: pointer;
 
       &:hover {
-        box-shadow: 3px 0px 11px -2px  $color-gray--ligth;
+        box-shadow: 3px 0px 11px -2px  $color-gray--light;
 
         .product__details__price {
           &:before {
@@ -214,7 +214,7 @@
 
             .options__size {
               margin-top: 10px;
-              border-top: 1px solid $color-gray--ligth;
+              border-top: 1px solid $color-gray--light;
               display: flex;
               flex-wrap: wrap;
 
@@ -226,12 +226,12 @@
                 width: 50px;
                 padding: 3px;
                 margin: 5px;
-                border: 1px solid $color-gray--ligth;
+                border: 1px solid $color-gray--light;
                 text-align: center;
                 cursor: pointer;
 
                 &--active {
-                  background: $color-gray--ligth;
+                  background: $color-gray--light;
                   border: 1px solid;
                 }
 

@@ -96,7 +96,7 @@
           width: 20px;
 
           &:hover {
-            background: $color-gray--ligth;
+            background: $color-gray--light;
           }
         }
       }
