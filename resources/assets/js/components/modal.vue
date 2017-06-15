@@ -73,7 +73,6 @@
       }
 
       @media screen and(max-width: $screen-mc) {
-        width: 90%;
         padding: 15px;
       }
 
@@ -84,11 +83,12 @@
 
       &__close {
         cursor: pointer;
+        position: absolute;
+        right: 5px;
+        top: 5px;
 
         svg {
-          position: absolute;
-          right: 5px;
-          top: 5px;
+          height: 15px;
           width: 20px;
 
           &:hover {
