@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-wrapper">
+  <div class="cart">
 
   </div>
 </template>
@@ -31,19 +31,12 @@
       cartItem
     }
   }
+
 </script>
 <style lang="sass" scoped>
   @import "~_sass/_vars.scss";
 
-  .grid-wrapper {
-    padding: 10px;
-
-    &__content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: $screen-sm;
-      margin: 0 auto;
-    }
+  .cart {
+    
   }
 </style>

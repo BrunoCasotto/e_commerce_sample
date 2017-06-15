@@ -54,6 +54,10 @@
     overflow-x: hidden;
     overflow-y: auto;
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     .modal {
       background-color: white;
       position: relative;

@@ -8,9 +8,10 @@
   </head>
   <body>
     <div id="app">
-      <div v-if="overlay" @click="closeModal" class="overlay"></div>
       <grid-wrapper></grid-wrapper>
+      <div v-if="overlay" @click="closeModal" class="overlay"></div>
       <modal></modal>
+      <cart></cart>
     </div>
     <script src="/js/bundled.js"></script>
     <script src="/js/bundled.js.map"></script>
