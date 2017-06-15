@@ -10,6 +10,9 @@
         <span class="price__value">{{ getInt(product.price)}},</span>
         <span class="price__value--decimal"> {{getDecimal(product.price) }} </span>
       </p>
+      <p class="product__details__optional-price">
+
+      </p>
     </div>
   </div>
 </template>
