@@ -1,15 +1,5 @@
 <template>
   <div :class="['cart-item', disabled ? 'cart-item--disabled': '' ]">
-    <div 
-      @click="removeItem()" 
-      @mouseover="disabled = true" 
-      @mouseleave="disabled = false" 
-      class="remove"
-    >
-      <svg viewBox="0 0 24 24">
-        <path d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
-      </svg>
-    </div>
 
     <div class="cart-item__image">
       <img src="/img/product.png"></img>
@@ -26,6 +16,16 @@
     </div>
 
     <div class="cart-item__controll">
+      <div 
+        @click="removeItem()" 
+        @mouseover="disabled = true" 
+        @mouseleave="disabled = false" 
+        class="remove"
+      >
+        <svg viewBox="0 0 24 24">
+          <path d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+        </svg>
+      </div>
       <p class="price" >
         <span class="price__currency">{{ product.currencyFormat }}</span>
         <span class="price__value">{{ getInt(product.subtotal) }},</span>
@@ -98,25 +98,6 @@
     justify-content: space-between;
     position: relative;
 
-    .remove {
-      width: 20px;
-      margin-left: auto;
-      cursor: pointer;
-      border-radius: 50%;
-      line-height: 10px;
-      position: absolute;
-      right: 15px;
-      top: 10px;
-
-      &:hover {
-        z-index: 10;
-
-        svg {
-          fill: white;
-        }
-      }
-    }
-
     &__image {
       width: 50px;
       height: 50px;
@@ -146,6 +127,21 @@
     }
     &__controll {
 
+      .remove {
+        width: 20px;
+        margin-left: auto;
+        cursor: pointer;
+        line-height: 10px;
+        margin-bottom: 5px;
+
+        &:hover {
+          z-index: 10;
+
+          svg {
+            fill: white;
+          }
+        }
+      }
       .price {
         color: $color-yellow;
 

@@ -98,7 +98,7 @@
         this.selectedSize = key
       },
       addCart() {
-        cartService.insertProduct( 
+        cartService.insertProduct(
           this.product,
           this.quantity,
           this.product.availableSizes[this.selectedSize]
