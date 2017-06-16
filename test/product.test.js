@@ -1,6 +1,5 @@
 import { mount } from 'avoriaz'
 import { expect } from 'chai'
-// import sinon from 'sinon';
 
 import product from '_components/product.vue'
 
