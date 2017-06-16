@@ -48,6 +48,7 @@
 <script>
   import growl from "growl-alert"
   import cartService from '_js/service'
+  import helpers from '_js/helpers'
 
   export default {
     data() {
@@ -79,14 +80,11 @@
       }
     },
     methods: {
-      filterPrice( value ) {
-        return parseFloat(value).toFixed(2)
-      },
       getInt( value ) {
-        return Math.floor( this.filterPrice( value ) )
+        return helpers.getInt(value)
       },
-      getDecimal( value ) {
-        return ( this.filterPrice( value ) % 1 ).toFixed(2).substring(2)
+      getDecimal(value) {
+        return helpers.getDecimal(value)
       },
       callModal() {
         this.$store.dispatch('callModal', {

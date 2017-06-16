@@ -40,6 +40,7 @@
 <script>
   import productService from '_js/service'
   import cartItem from '_components/cart-item.vue'
+  import helpers from '_js/helpers'
 
   export default {
     data() {
@@ -57,14 +58,11 @@
           console.log(error)
         })
       },
-      filterPrice( value ) {
-        return parseFloat(value).toFixed(2)
-      },
       getInt( value ) {
-        return Math.floor( this.filterPrice( value ) )
+        return helpers.getInt(value)
       },
-      getDecimal( value ) {
-        return ( this.filterPrice( value ) % 1 ).toFixed(2).substring(2)
+      getDecimal(value) {
+        return helpers.getDecimal(value)
       }
     },
     components: {

@@ -1,5 +1,5 @@
 <template>
-  <div @click="toggleCart" class="cart-icon">
+  <div @click="toggleCart" :class="['cart-icon', cart.active? 'cart-icon--active': '']">
     <div class="icon" :total="cart.data.quantity"></div>
   </div>
 </template>
@@ -55,6 +55,18 @@
       position: absolute;
       bottom: -5px;
       right: -2px;
+    }
+  }
+
+   &--active {
+    z-index: 10;
+
+    .icon {
+      background-image: url('/img/close.png');
+
+      &:before {
+        display: none;
+      }
     }
   }
 }

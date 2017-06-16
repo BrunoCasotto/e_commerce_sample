@@ -38,6 +38,7 @@
   import productService from '_js/service'
   import cartItem from '_components/cart-item.vue'
   import cartService from '_js/service'
+  import helpers from '_js/helpers'
 
   export default {
     data() {
@@ -52,15 +53,6 @@
       }
     },
     methods: {
-      fetchCart() {
-        productService.getProducts().then(result => {
-          if(result.status == 200) {
-            this.products = result.data.products || []
-          }
-        }).catch(error => {
-          console.log(error)
-        })
-      },
       removeItem() {
         cartService.removeProduct( this.product.identifier )
         .then(result => {
@@ -70,14 +62,11 @@
           console.log(error)
         })
       },
-      filterPrice( value ) {
-        return parseFloat(value).toFixed(2)
-      },
       getInt( value ) {
-        return Math.floor( this.filterPrice( value ) )
+        return helpers.getInt(value)
       },
-      getDecimal( value ) {
-        return ( this.filterPrice( value ) % 1 ).toFixed(2).substring(2)
+      getDecimal(value) {
+        return helpers.getDecimal(value)
       }
     },
     components: {
@@ -90,13 +79,18 @@
   @import "~_sass/_vars.scss";
   .cart-item {
     height: 100px;
-    width: 470px;
+    max-width: 470px;
+    width: 100%;
     margin: 0 auto;
     border-top: 2px solid black;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
+
+    @media screen and(max-width: $screen-sm) {
+      padding: 0 10px;
+    }
 
     &__image {
       width: 50px;
