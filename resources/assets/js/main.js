@@ -6,6 +6,8 @@ import Vue from 'vue'
 import gridWrapper from '_components/grid_wrapper.vue'
 import modal from '_components/modal.vue'
 import cart from '_components/cart.vue'
+import cartIcon from '_components/cart-icon.vue'
+
 import store from './vuex/store'
 
 new Vue({
@@ -14,7 +16,8 @@ new Vue({
   components: {
     gridWrapper,
     modal,
-    cart
+    cart,
+    cartIcon
   },
   computed: {
     overlay: function () {
