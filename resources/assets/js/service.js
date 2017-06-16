@@ -20,7 +20,7 @@ export default new class StoreService {
   insertProduct(product, quantity, variation) {
     return axios({
       url: '/cart/insert',
-      method: 'put',
+      method: 'PUT',
       data: {
         product: product,
         quantity: quantity,

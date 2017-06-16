@@ -1,7 +1,7 @@
 
 export default {
   state : {
-    active: true,
+    active: false,
     data: {}
   },
   mutations : {

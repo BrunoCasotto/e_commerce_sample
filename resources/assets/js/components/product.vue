@@ -38,7 +38,7 @@
         </div>
 
         <div class="options__controller">
-          <button class="btn btn--add-cart">Adicionar ao carrinho</button>
+          <button @click="addCart" class="btn btn--add-cart">Adicionar ao carrinho</button>
         </div>
       </div>
     </div>
@@ -46,7 +46,8 @@
   </div>
 </template>
 <script>
-	import growl from "growl-alert"
+  import growl from "growl-alert"
+  import cartService from '_js/service'
 
   export default {
     data() {
@@ -95,6 +96,24 @@
       },
       selectSize( key ) {
         this.selectedSize = key
+      },
+      addCart() {
+        cartService.insertProduct( 
+          this.product,
+          this.quantity,
+          this.product.availableSizes[this.selectedSize]
+        )
+        .then(result => {
+          this.$store.dispatch('setCart',result.data)
+          growl.success("Item inserido no carrinho")
+          //close modal
+          this.$store.dispatch('callModal', {
+            active: false,
+            product: {}
+          })
+        }).catch(error=>{
+          console.log(error)
+        })
       }
     },
     watch: {

@@ -24,11 +24,13 @@ module.exports = [
     {
       method: 'PUT',
       path: '/cart/insert',
-      handler: controller.insertProduct
+      handler: controller.insertProduct,
+      config: config
     },
     {
       method: 'DELETE',
       path: '/cart/remove/{identifier}',
-      handler: controller.removeProduct
+      handler: controller.removeProduct,
+      config: config
     }
   ]
