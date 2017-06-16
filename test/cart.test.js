@@ -1,10 +1,12 @@
 import { mount } from 'avoriaz'
 import { expect } from 'chai'
-import cart from '_components/cart.vue'
+
+import cart from "_components/cart.vue"
 
 describe('cart.vue', () => {
   it('renders a div with class bar', () => {
-    const wrapper = mount(Bar)
+
+    const wrapper = mount(cart)
     expect(wrapper.is('div')).to.equal(true)
     expect(wrapper.hasClass('cart')).to.equal(true)
   })

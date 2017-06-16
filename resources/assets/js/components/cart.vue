@@ -42,23 +42,10 @@
   import productService from '_js/service'
   import cartItem from '_components/cart-item.vue'
   import helpers from '_js/helpers'
+  import store from '_js/vuex/store'
 
   export default {
-    data() {
-      return {
-        products: [],
-        totalProducts: 0
-      }
-    },
     methods: {
-      fetchCart() {
-        cartService
-        .getCart().then(result=>{
-          this.$store.dispatch('setCart',result.data)
-        }).catch(error=>{
-          console.log(error)
-        })
-      },
       getInt( value ) {
         return helpers.getInt(value)
       },
@@ -71,7 +58,7 @@
     },
     computed: {
       cart: function () {
-        return this.$store.state.cart
+        return store.state.cart
       }
     }
   }
