@@ -1,12 +1,12 @@
 
 export default {
   state : {
-    active: true,
+    active: false,
     items: []
   },
   mutations : {
-    openCart (state, data) {
-      state.active = data
+    toggleCart (state, data) {
+      state.active = !state.active
     },
     insertItem (state, item) {
       state.items.push( item )
@@ -16,8 +16,8 @@ export default {
     }
   },
   actions : {
-    openCart (context, data) {
-      context.commit('openCart', data)
+    toggleCart (context) {
+      context.commit('toggleCart')
     },
     insertItem (context, item) {
       context.commit('insertItem', item)

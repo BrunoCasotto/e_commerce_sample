@@ -25,11 +25,17 @@ new Vue({
     }
   },
   methods: {
-    closeModal() {
-      this.$store.dispatch('callModal', {
-        active: false,
-        product: {}
-      })
+    closeOverlay() {
+      if(this.overlay) {
+        this.$store.dispatch('callModal', {
+          active: false,
+          product: {}
+        })
+      }
+
+      if(this.cartOverlay) {
+        this.$store.dispatch('toggleCart')
+      }
     }
   }
 })

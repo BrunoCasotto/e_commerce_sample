@@ -9,7 +9,6 @@
 
     <div class="cart__footer">
       <div class="cart__footer__content">
-
           <p class="message">subtotal</p>
           <div class="content__total">
             <p class="total__price" >
@@ -19,16 +18,14 @@
             </p>
             <p class="total__pay">
               <span class="pay__conditions">ou até {{10}} x</span>
-              <span class="pay__currency">{{R$}}</span>
+              <span class="pay__currency">R$</span>
               <span class="pay__value">
                 {{getInt(  500.9 / 10 )}},{{ getDecimal( 500.9 / 10 )}}
               </span>
             </p>
           </div>
-
       </div>
     </div>
-
   </div>
 </template>
 <script>
@@ -89,6 +86,7 @@
     background-color: $color-gray--dark;
     transform: translateX(100%);
     z-index: 7;
+    transition: all .5s ease;
 
     &--active {
       transform: translateX(0);
