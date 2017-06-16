@@ -1,7 +1,5 @@
 import { mount } from 'avoriaz'
 import { expect } from 'chai'
-import $store from "_js/vuex/store"
-
 
 import cart from "_components/cart.vue"
 

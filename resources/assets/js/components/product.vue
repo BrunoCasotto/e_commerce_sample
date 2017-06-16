@@ -49,6 +49,7 @@
   import growl from "growl-alert"
   import cartService from '_js/service'
   import helpers from '_js/helpers'
+  import store from '_js/vuex/store'
 
   export default {
     data() {
@@ -60,18 +61,19 @@
     props: {
       product: {
         type:Object,
-        default: {
-          "id": 0,
-          "sku": 0,
-          "title": "",
-          "description": "",
-          "availableSizes": [],
-          "style": "",
-          "price": 0,
-          "installments": 0,
-          "currencyId": "",
-          "currencyFormat": "",
-          "isFreeShipping": true
+        default: () => { return {
+            "id": 0,
+            "sku": 0,
+            "title": "",
+            "description": "",
+            "availableSizes": [],
+            "style": "",
+            "price": 0,
+            "installments": 0,
+            "currencyId": "",
+            "currencyFormat": "",
+            "isFreeShipping": true
+          }
         }
       },
       appearance: {
@@ -87,7 +89,7 @@
         return helpers.getDecimal(value)
       },
       callModal() {
-        this.$store.dispatch('callModal', {
+        store.dispatch('callModal', {
           active: true,
           product: this.product
         })
@@ -102,10 +104,10 @@
           this.product.availableSizes[this.selectedSize]
         )
         .then(result => {
-          this.$store.dispatch('setCart',result.data)
+          store.dispatch('setCart',result.data)
           growl.success("Item inserido no carrinho")
           //close modal
-          this.$store.dispatch('callModal', {
+          store.dispatch('callModal', {
             active: false,
             product: {}
           })
