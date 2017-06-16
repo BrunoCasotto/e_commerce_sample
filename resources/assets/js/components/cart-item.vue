@@ -28,7 +28,7 @@
     <div class="cart-item__controll">
       <p class="price" >
         <span class="price__currency">{{ product.currencyFormat }}</span>
-        <span class="price__value">{{ getInt(product.price) }},</span>
+        <span class="price__value">{{ getInt(product.subtotal) }},</span>
         <span class="price__value--decimal"> {{ getDecimal(product.price) }} </span>
       </p>
     </div>
