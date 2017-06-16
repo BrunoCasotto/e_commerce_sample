@@ -8,6 +8,7 @@ import modal from '_components/modal.vue'
 import cart from '_components/cart.vue'
 import cartIcon from '_components/cart-icon.vue'
 
+import cartService from '_js/service'
 import store from './vuex/store'
 
 new Vue({
@@ -27,6 +28,9 @@ new Vue({
       return this.$store.state.cart.active
     }
   },
+  mounted() {
+    this.fetchCart()
+  },
   methods: {
     closeOverlay() {
       if(this.overlay) {
@@ -39,6 +43,14 @@ new Vue({
       if(this.cartOverlay) {
         this.$store.dispatch('toggleCart')
       }
+    },
+    fetchCart() {
+      cartService
+      .getCart().then(result=>{
+         this.$store.dispatch('setCart',result.data)
+      }).catch(error=>{
+        console.log(error)
+      })
     }
   }
 })

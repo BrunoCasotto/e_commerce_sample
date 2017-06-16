@@ -1,6 +1,6 @@
 <template>
   <div @click="toggleCart" class="cart-icon">
-    <div class="icon" :total="totalProducts"></div>
+    <div class="icon" :total="cart.data.quantity"></div>
   </div>
 </template>
 <script>
@@ -8,11 +8,6 @@
   import cartItem from '_components/cart-item.vue'
 
   export default {
-    data () {
-      return {
-        totalProducts: 0
-      }
-    },
     computed: {
       cart: function () {
         return this.$store.state.cart
