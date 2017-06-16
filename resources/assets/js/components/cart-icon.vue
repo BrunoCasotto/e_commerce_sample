@@ -32,8 +32,8 @@
 .cart-icon {
   background: $color-gray--dark;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   border-radius: 50%;
   padding: 5px;
   cursor: pointer;
