@@ -1,7 +1,7 @@
 import { mount } from 'avoriaz'
 import { expect } from 'chai'
 
-import cart from "_components/cart.vue"
+import cart from '_components/cart.vue'
 
 describe('cart.vue', () => {
   const component = mount(cart)
@@ -23,5 +23,4 @@ describe('cart.vue', () => {
     expect(component.vm.cart.data.quantity).to.equal(0)
     expect(component.vm.cart.data.products.length).to.equal(0)
   })
-
 })

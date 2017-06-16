@@ -2,23 +2,23 @@ import { mount } from 'avoriaz'
 import { expect } from 'chai'
 // import sinon from 'sinon';
 
-import product from "_components/product.vue"
+import product from '_components/product.vue'
 
 describe('product.vue', () => {
   const component = mount(product)
   component.setProps({
-    product:{
-      "id": 15,
-      "sku": 11033926921508487,
-      "title": "Camisa Nike Corinthians",
-      "description": "Treino 2014",
-      "availableSizes": ["S", "G", "GG", "GGG"],
-      "style": "Branco com detalhe em azul",
-      "price": 149.9,
-      "installments": 5,
-      "currencyId": "BRL",
-      "currencyFormat": "R$",
-      "isFreeShipping": true
+    product: {
+      'id': 15,
+      'sku': 11033926921508487,
+      'title': 'Camisa Nike Corinthians',
+      'description': 'Treino 2014',
+      'availableSizes': ['S', 'G', 'GG', 'GGG'],
+      'style': 'Branco com detalhe em azul',
+      'price': 149.9,
+      'installments': 5,
+      'currencyId': 'BRL',
+      'currencyFormat': 'R$',
+      'isFreeShipping': true
     }
   })
 
@@ -43,5 +43,4 @@ describe('product.vue', () => {
     expect(typeof component.vm.addCart).to.equal('function')
     expect(typeof component.vm.callModal).to.equal('function')
   })
-
 })
