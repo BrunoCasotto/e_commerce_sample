@@ -2,9 +2,8 @@ const MainController = require('./../controller')
 const controller = new MainController()
 const config = require('./config')
 
-module.exports =
-  [
-    { 
+module.exports = [
+    {
       method: 'GET',
       path: '/',
       handler: controller.index,
@@ -15,5 +14,21 @@ module.exports =
       path: '/products',
       handler: controller.getProducts,
       config: config
+    },
+    {
+      method: 'GET',
+      path: '/cart',
+      handler: controller.getCart,
+      config: config
+    },
+    {
+      method: 'PUT',
+      path: '/cart/insert',
+      handler: controller.insertProduct
+    },
+    {
+      method: 'DELETE',
+      path: '/cart/remove/{identifier}',
+      handler: controller.removeProduct
     }
   ]
