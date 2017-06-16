@@ -1,7 +1,6 @@
 
 class Cart {
-
-  constructor() {
+  constructor () {
     this._cart = {
       products: [],
       total: 0,
@@ -9,14 +8,14 @@ class Cart {
     }
   }
 
-  get cart() {
+  get cart () {
     return this._cart
   }
 
-  set cart(cart) {
+  set cart (cart) {
     this._cart.quantity = 0
     this._cart.total = 0
-    this._cart.products.forEach( (product, index) =>{
+    this._cart.products.forEach((product, index) => {
       this._cart.products[index].subtotal = product.price * product.quantity
       this._cart.total = product.price * product.quantity + this._cart.total
       this._cart.quantity = parseInt(this._cart.quantity) + parseInt(product.quantity)
@@ -25,7 +24,7 @@ class Cart {
     this._cart = cart
   }
 
-  buildItem(product, variation, quantity) {
+  buildItem (product, variation, quantity) {
     let item = {}
 
     item['sku'] = product.sku
@@ -43,6 +42,5 @@ class Cart {
 
     return item
   }
-
 }
 module.exports = new Cart()

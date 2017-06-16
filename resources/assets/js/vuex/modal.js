@@ -1,17 +1,17 @@
 
 export default {
-  state : {
+  state: {
     active: false,
     data: {}
   },
-  mutations : {
+  mutations: {
     callModal (state, data) {
       state.active = data.active
       state.data = data.product
     }
   },
-  actions : {
-    callModal(context, data) {
+  actions: {
+    callModal (context, data) {
       context.commit('callModal', data)
     }
   }

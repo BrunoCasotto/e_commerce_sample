@@ -4,8 +4,8 @@ module.exports = [
   {
     method: 'GET',
     path: '/favicon.ico',
-    handler: function(request, reply) {
-      reply.file( 'favico.ico', { confine: false })
+    handler: function (request, reply) {
+      reply.file('favico.ico', { confine: false })
     },
     config: config
   },

@@ -1,8 +1,8 @@
-const path = require( 'path' )
-const webpack = require("webpack")
-const eslint   = require('./.eslintrc.json')
+const path = require('path')
+const webpack = require('webpack')
+const eslint = require('./.eslintrc.json')
 
-//path const
+// path const
 const base_path = path.resolve(__dirname, '..', 'resources/')
 const js_path = path.resolve(__dirname, '..', 'resources/assets/js')
 const sass_path = path.resolve(__dirname, '..', 'resources/assets/sass')
@@ -19,7 +19,7 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    alias:{
+    alias: {
       _components: path.join(js_path, 'components'),
       _js: path.join(js_path),
       _sass: path.join(sass_path),
@@ -48,7 +48,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: "style-loader!css-loader!sass-loader"
+        loader: 'style-loader!css-loader!sass-loader'
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
@@ -58,8 +58,8 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
+      $: 'jquery',
+      jQuery: 'jquery'
     })
   ]
 }

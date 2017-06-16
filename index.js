@@ -31,8 +31,8 @@ server.route(routes)
 
 const routeFile = require('./src/routes/file.js')
 
-server.register( require('inert'), err => {
-  if (err) console.log('Failed to load inert plugin.')  
+server.register(require('inert'), err => {
+  if (err) console.log('Failed to load inert plugin.')
   server.route(routeFile)
 })
 
@@ -40,5 +40,5 @@ server.start(err => {
   if (err) {
     console.log(err)
   }
-  console.log(`Server running at: ${server.info.uri}`);
+  console.log(`Server running at: ${server.info.uri}`)
 })

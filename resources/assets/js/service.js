@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 
 export default new class StoreService {
   getProducts () {
@@ -9,7 +9,7 @@ export default new class StoreService {
     })
   }
 
-  getCart() {
+  getCart () {
     return axios({
       url: '/cart',
       method: 'get',
@@ -17,7 +17,7 @@ export default new class StoreService {
     })
   }
 
-  insertProduct(product, quantity, variation) {
+  insertProduct (product, quantity, variation) {
     return axios({
       url: '/cart/insert',
       method: 'PUT',
@@ -29,11 +29,11 @@ export default new class StoreService {
     })
   }
 
-  removeProduct(identifier) {
+  removeProduct (identifier) {
     return axios({
-      url: '/cart/remove/'+identifier,
+      url: '/cart/remove/' + identifier,
       method: 'delete',
       data: {}
     })
   }
-}
+}()

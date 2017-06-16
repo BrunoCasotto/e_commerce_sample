@@ -1,10 +1,10 @@
 
 export default {
-  state : {
+  state: {
     active: false,
     data: {}
   },
-  mutations : {
+  mutations: {
     toggleCart (state, data) {
       state.active = !state.active
     },
@@ -12,7 +12,7 @@ export default {
       state.data = cart
     }
   },
-  actions : {
+  actions: {
     toggleCart (context) {
       context.commit('toggleCart')
     },
