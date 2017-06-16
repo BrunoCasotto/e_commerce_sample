@@ -39,7 +39,6 @@
   import cartItem from '_components/cart-item.vue'
   import cartService from '_js/service'
   import helpers from '_js/helpers'
-  import store from '_js/vuex/store'
 
   export default {
     data() {
@@ -57,7 +56,7 @@
       removeItem() {
         cartService.removeProduct( this.product.identifier )
         .then(result => {
-          store.dispatch('setCart',result.data)
+          this.$store.dispatch('setCart',result.data)
           growl.success("Item removido no carrinho")
         }).catch(error=>{
           console.log(error)

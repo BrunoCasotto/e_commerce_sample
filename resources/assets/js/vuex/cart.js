@@ -2,7 +2,11 @@
 export default {
   state: {
     active: false,
-    data: {}
+    data: {
+      total: 0,
+      products: [],
+      quantity: 0
+    }
   },
   mutations: {
     toggleCart (state, data) {
