@@ -1,6 +1,7 @@
 <template>
   <div class="grid-wrapper">
     <div class="grid-wrapper__content">
+      <!-- product list -->
       <template v-for="product in products">
         <product :product="product"></product>
       </template>

@@ -9,7 +9,6 @@
       </div>
       <!--product content-->
       <product :product="state.data" appearance="modal"></product>
-
     </div>
   </div>
 </template>
