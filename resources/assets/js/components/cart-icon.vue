@@ -26,7 +26,7 @@
 
 .cart-icon {
   background: $color-gray--dark;
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 20px;
   border-radius: 50%;

@@ -24,7 +24,7 @@
                 <span class="price__value">{{getInt( cart.data.total )}},</span>
                 <span class="price__value--decimal">{{getDecimal( cart.data.total )}}</span>
               </p>
-              <p class="total__pay">
+              <p v-if="cart.data.quantity > 0" class="total__pay">
                 <span class="pay__conditions">ou até {{10}} x</span>
                 <span class="pay__currency">R$</span>
                 <span class="pay__value">
@@ -33,6 +33,7 @@
               </p>
             </div>
         </div>
+        <button class="btn btn--finalize">Comprar</button>
       </div>
     </div>
   </div>
@@ -170,8 +171,15 @@
               }
             }
           }
-
-        } 
+        }
+ 
+        .btn--finalize {
+          width: 100%;
+          color: white;
+          font-weight: bold;
+          background: black;
+          border-radius: 0;
+        }
       }
     }
   }

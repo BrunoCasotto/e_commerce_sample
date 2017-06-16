@@ -122,11 +122,14 @@
     &__controll {
 
       .remove {
-        width: 20px;
         margin-left: auto;
         cursor: pointer;
-        line-height: 10px;
-        margin-bottom: 5px;
+        width: 15px;
+        
+        svg {
+          width: 100%;
+          height: 15px;
+        }
 
         &:hover {
           z-index: 10;
